@@ -14,7 +14,7 @@ after_success:
   - docker build -t nvestan/multi-server ./server
   - docker build -t nvestan/multi-worker ./worker 
 # login to docker cli
-  - echo "$DOCKER_PASSWORD" | docker login -u "nvestan"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"
 # take images and push them to docker hub
   - docker push nvestan/multi-client
   - docker push nvestan/multi-nginx
